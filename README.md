@@ -32,3 +32,4 @@
 5. Запускаем sheetsPump/main.py, ждём от него сообщение "Data has been filled." (при первом запуске, когда таблица ещё на создана в БД и не заполнена, далее вас ожидают надписи "No updates." и "Data has been Updated. Row(s): Updated: X, Added: Y, Deleted: Z"). Запускаем FlaskServer/main.py.
 6. Открываем в своём браузере адрес: http://127.0.0.1:5000/
 7. Смотрим график, смотрим таблицу, редактируем лист в Google Sheets, смотрим как SheetsPump обновляет данные в БД, шлёт уведомления на телеграм, и смотрим как FlaskServer берёт эти данные из БД, отрисовывает график, заполняет таблицу, обновляет их.
+8. Ссылка на таблицу Google Sheets используемую в проекте: https://docs.google.com/spreadsheets/d/1y9WCh_0dq7hEXgcLD9dI-M3zr8Oti4hsogFfNA0TTlE/edit#gid=0
