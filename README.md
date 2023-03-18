@@ -23,7 +23,7 @@
 	1. Скачиваем установочный файл PostgreSQL с официального сайта по ссылке https://www.postgresql.org/download/windows/.
 	2. Запускаем установку PostgreSQL, следуя инструкциям на экране.
 	3. Задаём пароль суперпользователю оба раза: 1234
-	3. При установке выбераем опцию "PostgreSQL Server" и выберите порт (например, 5432).
+	3. При установке выбираем опцию "PostgreSQL Server" и выберите порт (например, 5432).
 	4. Запускаем PostgreSQL Server, используя службу "PostgreSQL" в меню служб Windows.
 	5. Запускаем от имени администратора pgAdmin 4, создаём там базу данных с именем mydb (Databases -> Create -> Database).
 	6. Создаём пользователя БД с именем myuser и паролем 0000 (Login/Group Roles -> Create -> Login/Group Role), выдаём ему все привилегии (Privileges), в разделе Membership в "Member of" добавляем "pg_read_all_data" и "pg_write_all_data" и ставим напротив них галочки (WITH ADMIN), сохраняем.
