@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Статистика заказов</title>
+    <style>
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+ th, td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: center;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        setInterval(function() {
+            $.ajax({
+                url: "/update_data",
+                type: "GET",
+                success: function(data) {
+                    $('#my-table').html(data['table']);
+                    $('#my-graph').html(data['graph']);
+                    $('#my-total_usd').html('Сумма (USD): ' + data['total_usd']);
+                    $('#my-total_rub').html('Сумма (RUB): ' + data['total_rub']);
+                }
+            });
+        }, 5000);
+    });
+</script>
+</head>
+
+<body>
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+                <td style="width: 100.0000%;"><br><div id="my-graph" style="text-align: center;">{{ graph|safe }}</div></td>
+            </tr>
+            <tr>
+                <td style="width: 100.0000%;"><br>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 50.0000%;"><br><div id="my-total_usd" style="text-align: center;">Сумма (USD): {{ total_usd }}</div></td>
+                                <td style="width: 50.0000%;"><br><div id="my-total_rub"  style="text-align: center;">Сумма (RUB): {{ total_rub }}</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 100.0000%;"><br><div id="my-table" style="text-align: center;">{{ table|safe }}</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
